@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class Navbar extends Component {
+export class Pages extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,7 +10,6 @@ export class Navbar extends Component {
     render() {
         return (
             <>
-            
             </>
         )
     }
