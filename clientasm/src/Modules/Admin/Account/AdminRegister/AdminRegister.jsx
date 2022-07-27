@@ -1,7 +1,7 @@
-import React from "react";
-import { Component } from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-export class LoginAdmin extends Component {
+export class AdminRegister extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,11 +11,10 @@ export class LoginAdmin extends Component {
     render() {
         return (
             <>
-                <h1>Login Page Admin</h1>
                 <div className="container-xxl">
                     <div className="authentication-wrapper authentication-basic container-p-y">
                         <div className="authentication-inner">
-                            {/* Register */}
+                            {/* Register Card */}
                             <div className="card">
                                 <div className="card-body">
                                     {/* Logo */}
@@ -103,10 +102,8 @@ export class LoginAdmin extends Component {
                                         </a>
                                     </div>
                                     {/* /Logo */}
-                                    <h4 className="mb-2">Welcome to Sneat! 👋</h4>
-                                    <p className="mb-4">
-                                        Please sign-in to your account and start the adventure
-                                    </p>
+                                    <h4 className="mb-2">Adventure starts here 🚀</h4>
+                                    <p className="mb-4">Make your app management easy and fun!</p>
                                     <form
                                         id="formAuthentication"
                                         className="mb-3"
@@ -114,27 +111,34 @@ export class LoginAdmin extends Component {
                                         method="POST"
                                     >
                                         <div className="mb-3">
+                                            <label htmlFor="username" className="form-label">
+                                                Username
+                                            </label>
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                id="username"
+                                                name="username"
+                                                placeholder="Enter your username"
+                                                autofocus=""
+                                            />
+                                        </div>
+                                        <div className="mb-3">
                                             <label htmlFor="email" className="form-label">
-                                                Email or Username
+                                                Email
                                             </label>
                                             <input
                                                 type="text"
                                                 className="form-control"
                                                 id="email"
-                                                name="email-username"
-                                                placeholder="Enter your email or username"
-                                                autofocus=""
+                                                name="email"
+                                                placeholder="Enter your email"
                                             />
                                         </div>
                                         <div className="mb-3 form-password-toggle">
-                                            <div className="d-flex justify-content-between">
-                                                <label className="form-label" htmlFor="password">
-                                                    Password
-                                                </label>
-                                                <a href="auth-forgot-password-basic.html">
-                                                    <small>Forgot Password?</small>
-                                                </a>
-                                            </div>
+                                            <label className="form-label" htmlFor="password">
+                                                Password
+                                            </label>
                                             <div className="input-group input-group-merge">
                                                 <input
                                                     type="password"
@@ -154,24 +158,21 @@ export class LoginAdmin extends Component {
                                                 <input
                                                     className="form-check-input"
                                                     type="checkbox"
-                                                    id="remember-me"
+                                                    id="terms-conditions"
+                                                    name="terms"
                                                 />
-                                                <label className="form-check-label" htmlFor="remember-me">
-                                                    {" "}
-                                                    Remember Me{" "}
+                                                <label className="form-check-label" htmlFor="terms-conditions">
+                                                    I agree to
+                                                    <a href="javascript:void(0);">privacy policy &amp; terms</a>
                                                 </label>
                                             </div>
                                         </div>
-                                        <div className="mb-3">
-                                            <button className="btn btn-primary d-grid w-100" type="button">
-                                                Sign in
-                                            </button>
-                                        </div>
+                                        <button type="button" className="btn btn-primary d-grid w-100">Sign up</button>
                                     </form>
                                     <p className="text-center">
-                                        <span>New on our platform?</span>
-                                        <Link to="/account-register">
-                                            <span>Create an account</span>
+                                        <span>Already have an account?</span>
+                                        <Link to="/account-login">
+                                            <span>Sign in instead</span>
                                         </Link>
                                     </p>
                                 </div>
@@ -179,6 +180,7 @@ export class LoginAdmin extends Component {
                         </div>
                     </div>
                 </div>
+
             </>
         )
     }
