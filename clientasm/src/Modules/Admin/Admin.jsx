@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AdminLogin } from "./Account/AdminLogin/AdminLogin";
 import { AdminRegister } from "./Account/AdminRegister/AdminRegister";
 import { Errors } from "../Shared/Error/Errors";
+import AdminLogin from "./Account/AdminLogin/AdminLogin";
 
 export class Admin extends Component {
     constructor(props) {
